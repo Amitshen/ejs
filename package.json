@@ -1,0 +1,27 @@
+{
+  "name": "ejs",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "this is testing ejs code",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/style.css --watch",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "npm run test"
+  },
+  "author": "Amit",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.3"
+  }
+}
