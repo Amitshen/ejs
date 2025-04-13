@@ -1,36 +1,34 @@
-<%- include("../partials/header") %>
+<h1 class="text-3xl font-semibold mb-6">Users</h1>
 
-<div class="min-h-screen flex">
-  <!-- Sidebar -->
-  <%- include("../partials/sidebar") %>
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white rounded-xl shadow">
+    <thead>
+      <tr class="bg-gray-200 text-left text-sm uppercase text-gray-600">
+        <th class="py-3 px-4">ID</th>
+        <th class="py-3 px-4">Name</th>
+        <th class="py-3 px-4">Email</th>
+        <th class="py-3 px-4">Role</th>
+        <th class="py-3 px-4">Action</th>
+      </tr>
+    </thead>
+    <tbody class="text-gray-700">
+      <% users.forEach(user => { %>
+      <tr class="border-t">
+        <td class="py-2 px-4"><%= user.id %></td>
+        <td class="py-2 px-4"><%= user.name %></td>
+        <td class="py-2 px-4"><%= user.email %></td>
+        <td class="py-2 px-4"><%= user.role %></td>
+        <td class="py-2 px-4">
+          <a
+            href="/admin/users/edit/<%= user.id %>"
+            class="inline-block px-4 py-1 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-200"
+          >
+            Edit
+          </a>
+        </td>
 
-  <!-- Content -->
-  <main class="flex-1 p-10 bg-gray-100">
-    <h1 class="text-3xl font-semibold mb-6">Users</h1>
-
-    <div class="overflow-x-auto">
-      <table class="min-w-full bg-white rounded-xl shadow">
-        <thead>
-          <tr class="bg-gray-200 text-left text-sm uppercase text-gray-600">
-            <th class="py-3 px-4">ID</th>
-            <th class="py-3 px-4">Name</th>
-            <th class="py-3 px-4">Email</th>
-            <th class="py-3 px-4">Role</th>
-          </tr>
-        </thead>
-        <tbody class="text-gray-700">
-          <% users.forEach(user => { %>
-          <tr class="border-t">
-            <td class="py-2 px-4"><%= user.id %></td>
-            <td class="py-2 px-4"><%= user.name %></td>
-            <td class="py-2 px-4"><%= user.email %></td>
-            <td class="py-2 px-4"><%= user.role %></td>
-          </tr>
-          <% }); %>
-        </tbody>
-      </table>
-    </div>
-  </main>
+        <% }); %>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-<%- include("../partials/footer") %>

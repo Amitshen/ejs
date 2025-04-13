@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+
+<div class="min-h-screen flex">
+  <!-- Sidebar -->
+  <%- include("partials/sidebar") %>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-10 bg-gray-100">
+    <%- body %>
+    <!-- Content from the individual view gets injected here -->
+  </main>
+</div>
+
+<%- include("partials/footer") %>
